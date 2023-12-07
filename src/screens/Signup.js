@@ -13,6 +13,7 @@ const Signup = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>FURAIA</Text>
       <View style={styles.bodyContainer}>
         <Text style={styles.title}>LOGIN</Text>
         <TextInput
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#002A0C",
     flex: 1,
     width: "100%",
-    padding: 10,
+    padding: 20,
   },
   bodyContainer: {
     flex: 1, // Take up available space
@@ -81,6 +82,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     fontWeight: "bold",
     color: "#fff",
+    textTransform: "uppercase",
   },
   body: {
     alignSelf: "flex-end",

@@ -4,13 +4,15 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import Home from "./src/screens/Home";
 import Signup from "./src/screens/Signup";
+import Register from "./src/screens/Register";
 
 export default function App() {
   return (
     <SafeAreaProvider style={styles.container}>
       {/* <View > */}
       {/* <Home /> */}
-      <Signup />
+      {/* <Signup /> */}
+      <Register />
       <StatusBar style="auto" />
       {/* </View> */}
     </SafeAreaProvider>
@@ -23,6 +25,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#002A0C",
     alignItems: "center",
     justifyContent: "center",
-    padding: 10,
+    // padding: 10,
   },
 });
