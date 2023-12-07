@@ -1,61 +1,93 @@
+import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { TextInput } from 'react-native-paper';
+import { TextInput } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import Button from "../components/Button";
 
-
 const Signup = () => {
+  const handleButtonPress = () => {
+    // Handle button press logic here
+    console.log("Button Pressed!");
+  };
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>LOGIN</Text>
-      {/* <TextInput style={styles.input} placeholder="johndoe@email.com" /> */}
-      <TextInput
-      label="Email"
-      type="outlined"
-      style={{
-        width:"100%"
-      }}
-      value={"text"}
-      // onChangeText={text => setText(text)}
-    /> 
-      {/* <TextInput style={styles.input} placeholder="****" /> */}
-      <Text>Forgot password?</Text>
-      <Button text="Sign Up" onPress={() => alert("Button pressed")} />
-    </View>
-      
+    <SafeAreaView style={styles.container}>
+      <View style={styles.bodyContainer}>
+        <Text style={styles.title}>LOGIN</Text>
+        <TextInput
+          label="Email"
+          mode="outlined"
+          placeholder="johndoe@gmail.com"
+          outlineColor="#fff"
+          style={styles.input}
+          theme={{
+            colors: {
+              primary: "#fff", // Label color
+              text: "#fff", // Text input color
+              placeholder: "#fff", // Placeholder color
+              background: "#002A0C", // Background color
+            },
+          }}
+        />
+
+        <TextInput
+          label="Pin"
+          keyboardType="numeric"
+          mode="outlined"
+          style={styles.input}
+          placeholder="****"
+          outlineColor="#fff"
+          theme={{
+            colors: {
+              primary: "#fff", // Label color
+              text: "#fff", // Text input color
+              placeholder: "#fff", // Placeholder color
+              background: "#002A0C", // Background color
+            },
+          }}
+        />
+        <Text style={styles.body}>Forgot password?</Text>
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button label="Click Me" onPress={handleButtonPress} theme="light" />
+        <Text style={styles.body}>
+          Don't have an account? Create an Account
+        </Text>
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#002A0C",
     flex: 1,
-    margin: 12,
+    width: "100%",
+    padding: 10,
   },
-  title: {
-    alignSelf: "flex-start",
-    fontSize: 24,
-    marginBottom: 16,
-    fontWeight:"bold",
-    
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: "#000",
-    padding: 8,
-    margin: 10,
-    width: 380,
+  bodyContainer: {
+    flex: 1, // Take up available space
+    justifyContent: "center", // Center content vertically
   },
   buttonContainer: {
-    backgroundColor: "blue",
     padding: 10,
     margin: 10,
+    width: "100%",
+    alignSelf: "flex-end", // Align at the bottom
   },
-  buttonText: {
-    color: "#fff",
+  title: {
     fontSize: 24,
+    marginBottom: 16,
+    fontWeight: "bold",
+    color: "#fff",
+  },
+  body: {
+    alignSelf: "flex-end",
+    color: "#fff",
+  },
+  input: {
+    marginBottom: 16,
   },
 });
 

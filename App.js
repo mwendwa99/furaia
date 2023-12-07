@@ -1,25 +1,28 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import Home from "./src/screens/Home";
 import Signup from "./src/screens/Signup";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>YAAY FURAIA IS UP!</Text>
-      <Home />
+    <SafeAreaProvider style={styles.container}>
+      {/* <View > */}
+      {/* <Home /> */}
       <Signup />
       <StatusBar style="auto" />
-    </View>
+      {/* </View> */}
+    </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#002A0C",
     alignItems: "center",
     justifyContent: "center",
+    padding: 10,
   },
 });

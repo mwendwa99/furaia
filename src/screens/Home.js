@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <Text>Home Page</Text>
+      <Text>YAAY FURAIA IS UP!</Text>
     </View>
   );
 };
