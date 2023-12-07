@@ -5,12 +5,13 @@ import Button from "../components/Button";
 const Signup = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Sign Up</Text>
+      <Text style={styles.title}>LOGIN</Text>
       <TextInput style={styles.input} placeholder="Username" />
       <TextInput style={styles.input} placeholder="Email" />
       <TextInput style={styles.input} placeholder="Password" />
       <Button text="Sign Up" onPress={() => alert("Button pressed")} />
     </View>
+      
   );
 };
 
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
+    marginLeft:0,
     marginBottom: 16,
   },
   input: {

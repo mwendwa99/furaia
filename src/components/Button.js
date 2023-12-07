@@ -1,4 +1,4 @@
-import { TouchableOpacity, StyleSheet } from "react-native";
+import { TouchableOpacity, StyleSheet, Text } from "react-native";
 
 const Button = ({ text, onPress }) => {
   return (
@@ -10,7 +10,7 @@ const Button = ({ text, onPress }) => {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    backgroundColor: "blue",
+    backgroundColor: "white",
     padding: 10,
     margin: 10,
   },
