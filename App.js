@@ -3,13 +3,14 @@ import { StyleSheet, Text, View } from "react-native";
 
 import Home from "./src/screens/Home";
 import Signup from "./src/screens/Signup";
+import {Bill} from "./src/screens/Bill";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>YAAY FURAIA IS UP!</Text>
-      <Home />
-      <Signup />
+      {/* <Home /> */}
+      {/* <Signup /> */}
+      <Bill />
       <StatusBar style="auto" />
     </View>
   );
