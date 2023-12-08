@@ -5,10 +5,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import Button from "../components/Button";
 
-const Signup = () => {
+const Login = ({ navigation }) => {
   const handleButtonPress = () => {
-    // Handle button press logic here
-    console.log("Button Pressed!");
+    navigation.navigate("Register");
   };
 
   return (
@@ -21,6 +20,8 @@ const Signup = () => {
           mode="outlined"
           placeholder="johndoe@gmail.com"
           outlineColor="#fff"
+          textColor="#fff"
+          placeholderTextColor="#808080"
           style={styles.input}
           theme={{
             colors: {
@@ -39,6 +40,8 @@ const Signup = () => {
           style={styles.input}
           placeholder="****"
           outlineColor="#fff"
+          textColor="#fff"
+          placeholderTextColor="#808080"
           theme={{
             colors: {
               primary: "#fff", // Label color
@@ -48,11 +51,16 @@ const Signup = () => {
             },
           }}
         />
-        <Text style={styles.body}>Forgot password?</Text>
+        <Text
+          style={styles.body}
+          onPress={() => navigation.navigate("ForgotPassword")}
+        >
+          Forgot password?
+        </Text>
       </View>
       <View style={styles.buttonContainer}>
-        <Button label="Click Me" onPress={handleButtonPress} theme="light" />
-        <Text style={styles.body}>
+        <Button label="Click Me" theme="light" />
+        <Text style={styles.body} onPress={handleButtonPress}>
           Don't have an account? Create an Account
         </Text>
       </View>
@@ -93,4 +101,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Signup;
+export default Login;

@@ -3,13 +3,16 @@ import { View, Text, StyleSheet } from "react-native";
 import { TextInput } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Picker } from "@react-native-picker/picker";
+import { Checkbox } from "react-native-paper";
 
 import Button from "../components/Button";
 
-const Register = () => {
+const Register = ({ navigation }) => {
+  const [checked, setChecked] = React.useState(false);
   const handleButtonPress = () => {
     // Handle button press logic here
     console.log("Button Pressed!");
+    navigation.navigate("Login");
   };
 
   return (
@@ -70,13 +73,18 @@ const Register = () => {
           outlineColor="#002a0c"
           theme={inputTheme}
         />
-        <Text style={styles.body}>Forgot password?</Text>
+        <View style={styles.checkbox}>
+          <Checkbox
+            status={checked ? "checked" : "unchecked"}
+            onPress={() => {
+              setChecked(!checked);
+            }}
+          />
+          <Text style={styles.body}>Agree to the terms and conditions</Text>
+        </View>
       </View>
       <View style={styles.buttonContainer}>
         <Button label="Click Me" onPress={handleButtonPress} theme="dark" />
-        <Text style={styles.body}>
-          Don't have an account? Create an Account
-        </Text>
       </View>
     </SafeAreaView>
   );
@@ -121,6 +129,11 @@ const styles = StyleSheet.create({
   },
   input: {
     marginBottom: 16,
+  },
+  checkbox: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "pink",
   },
 });
 

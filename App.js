@@ -1,21 +1,21 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { NavigationContainer } from "@react-navigation/native";
 
 import Home from "./src/screens/Home";
-import Signup from "./src/screens/Signup";
+import Signup from "./src/screens/Login";
 import Register from "./src/screens/Register";
+import AuthNavigator from "./src/navigation/AuthNavigator";
 
 export default function App() {
   return (
-    <SafeAreaProvider style={styles.container}>
-      {/* <View > */}
-      {/* <Home /> */}
-      {/* <Signup /> */}
-      <Register />
+    <NavigationContainer>
+      {/* <SafeAreaProvider style={styles.container}> */}
       <StatusBar style="auto" />
-      {/* </View> */}
-    </SafeAreaProvider>
+      <AuthNavigator />
+      {/* </SafeAreaProvider> */}
+    </NavigationContainer>
   );
 }
 
