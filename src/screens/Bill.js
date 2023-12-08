@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image } from "react-native";
 // import backarrow from '../../assets/left-arrow.png'
 import smile from '../../assets/smiley-sad.png'
 
-export const Bill = () => {
+ const Bill = () => {
   return (
     <>
     {/* <View  style={styles.billsDashboard}>
@@ -47,6 +47,8 @@ const styles = StyleSheet.create({
         backgroundColor:"#fff",
         justifyContent:"center",
         alignItems:"center",
+        flex:1,
+        width:"100%",
         
     },
     smileyImage: {
@@ -72,3 +74,4 @@ const styles = StyleSheet.create({
     },
 
 })
+export default Bill

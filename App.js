@@ -7,14 +7,16 @@ import Home from "./src/screens/Home";
 import Signup from "./src/screens/Login";
 import Register from "./src/screens/Register";
 import AuthNavigator from "./src/navigation/AuthNavigator";
+import Bill from "./src/screens/Bill";
 
 export default function App() {
   return (
     <NavigationContainer>
-      {/* <SafeAreaProvider style={styles.container}> */}
+      <SafeAreaProvider style={styles.container}>
       <StatusBar style="auto" />
-      <AuthNavigator />
-      {/* </SafeAreaProvider> */}
+      <Bill/>
+      {/* <AuthNavigator /> */}
+      </SafeAreaProvider>
     </NavigationContainer>
   );
 }
