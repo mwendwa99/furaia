@@ -7,14 +7,16 @@ import Home from "./src/screens/Home";
 import Signup from "./src/screens/Login";
 import Register from "./src/screens/Register";
 import AuthNavigator from "./src/navigation/AuthNavigator";
-import Bill from "./src/screens/Bill";
+// import Bill from "./src/screens/Bill";
+import Dashboard from "./src/screens/Dashboard";
 
 export default function App() {
   return (
     <NavigationContainer>
       <SafeAreaProvider style={styles.container}>
       <StatusBar style="auto" />
-      <Bill/>
+      <Dashboard />
+      {/* <Bill/> */}
       {/* <AuthNavigator /> */}
       </SafeAreaProvider>
     </NavigationContainer>
@@ -24,9 +26,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#002A0C",
-    alignItems: "center",
-    justifyContent: "center",
-    // padding: 10,
+    // backgroundColor: "#002A0C",
+    // alignItems: "center",
+    // justifyContent: "center",
+    // paddingHorizontal: 10,
   },
 });
