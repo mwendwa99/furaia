@@ -2,10 +2,12 @@ import * as React from "react";
 import { BottomNavigation } from "react-native-paper";
 
 
-const Dashboard = () => require("../screens/DashboardScreen");
-const Scan = () => require("../screens");
-const Settings = () => require("../screens");
-const Explore = () => require("../screens/");
+// const Dashboard = () => require("../screens/DashboardScreen");
+// const Scan = () => require("../screens");
+// const Settings = () => require("../screens");
+// const Explore = () => require("../screens/");
+
+import { Dashboard, Scan, Settings, Explore } from "../screens";
 
 
 const BottomNavigationBar = () => {
