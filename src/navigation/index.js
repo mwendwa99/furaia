@@ -1,14 +1,61 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View, Text } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 import { Login, Register, ForgotPassword } from "../screens";
-import { BottomNavigationBar } from "../components";
+import { Dashboard, ScanScreen, Settings, AccountScreen } from "../screens";
 
 const Stack = createNativeStackNavigator();
+const BottomTab = createBottomTabNavigator();
 
 const AppNavigator = () => {
-  return <BottomNavigationBar />;
+  return (
+    <BottomTab.Navigator screenOptions={{ headerShown: false }}>
+      <BottomTab.Screen
+        name="Dashboard"
+        component={Dashboard}
+        options={{
+          title: "Dashboard",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="view-dashboard"
+              color={color}
+              size={size}
+            />
+          ),
+          tabBarLabelPosition: "beside-icon",
+        }}
+      />
+      <BottomTab.Screen
+        name="ScanScreen"
+        component={ScanScreen}
+        options={{
+          title: "Scan",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="qrcode-scan"
+              color={color}
+              size={size}
+            />
+          ),
+          tabBarLabelPosition: "beside-icon",
+        }}
+      />
+
+      <BottomTab.Screen
+        name="AccountScreen"
+        component={AccountScreen}
+        options={{
+          title: "Account",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="account" color={color} size={size} />
+          ),
+          tabBarLabelPosition: "beside-icon",
+        }}
+      />
+    </BottomTab.Navigator>
+  );
 };
 
 const AuthNavigator = () => {

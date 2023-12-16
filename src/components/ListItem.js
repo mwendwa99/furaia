@@ -5,7 +5,7 @@ import { List } from "react-native-paper";
 const ListItem = (props) => {
   return (
     <List.Section>
-      <TouchableOpacity onPress={() => {}}>
+      <TouchableOpacity onPress={() => props.navigate && props.navigate()}>
         <List.Item
           title={props.title}
           left={(iconProps) => (
@@ -25,5 +25,5 @@ export default ListItem;
 
 const lisItemStyle = {
   backgroundColor: "#fff",
-  marginVertical: 5,
+  marginVertical: 1,
 };
