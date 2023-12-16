@@ -85,6 +85,9 @@ const styles = StyleSheet.create({
     margin: 10,
     width: "100%",
     alignSelf: "flex-end", // Align at the bottom
+    justifyContent: "center",
+    // backgroundColor: "yellow",
+    width: "100%",
   },
   title: {
     fontSize: 24,
