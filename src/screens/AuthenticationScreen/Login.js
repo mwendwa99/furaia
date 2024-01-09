@@ -14,15 +14,19 @@ const Login = ({ navigation }) => {
     navigation.navigate("Register");
   };
 
+  const handleRequestOtp = () => {
+    alert("OTP sent to your phone number");
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>FURAIA</Text>
       <View style={styles.bodyContainer}>
         <Text style={styles.title}>LOGIN</Text>
         <TextInput
-          label="Email"
+          label="Phone Number"
           mode="outlined"
-          placeholder="johndoe@gmail.com"
+          placeholder="+254796898480"
           outlineColor="#fff"
           textColor="#fff"
           placeholderTextColor="#808080"
@@ -31,7 +35,7 @@ const Login = ({ navigation }) => {
         />
 
         <TextInput
-          label="Pin"
+          label="OTP"
           keyboardType="numeric"
           mode="outlined"
           style={styles.input}
@@ -41,17 +45,22 @@ const Login = ({ navigation }) => {
           placeholderTextColor="#808080"
           theme={inputTheme}
         />
-        <Text
-          style={styles.body}
-          onPress={() => navigation.navigate("ForgotPassword")}
-        >
-          Forgot password?
-        </Text>
+        <View style={styles.otpContainer}>
+          <Text style={styles.body} onPress={handleRequestOtp}>
+            Request OTP
+          </Text>
+          <Text
+            style={styles.body}
+            onPress={() => navigation.navigate("ForgotPassword")}
+          >
+            Forgot password?
+          </Text>
+        </View>
       </View>
       <View style={styles.buttonContainer}>
         <CustomIconButton onPress={handleLogin} theme="light" />
         <Text style={styles.body} onPress={handleCreateAccount}>
-          Don't have an account? Create an Account
+          Create an Account
         </Text>
       </View>
     </SafeAreaView>
@@ -80,14 +89,18 @@ const styles = StyleSheet.create({
     flex: 1, // Take up available space
     justifyContent: "center", // Center content vertically
   },
+  otpContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
   buttonContainer: {
     padding: 10,
     margin: 10,
     width: "100%",
-    alignSelf: "flex-end", // Align at the bottom
+    alignSelf: "flex-start",
     justifyContent: "center",
-    // backgroundColor: "yellow",
-    width: "100%",
+    alignItems: "flex-start",
   },
   title: {
     fontSize: 24,

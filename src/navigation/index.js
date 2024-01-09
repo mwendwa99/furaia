@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 import { Login, Register, ForgotPassword } from "../screens";
+import { LoginStackNavigator } from "../screens";
 import { Dashboard, ScanScreen, Settings, AccountScreen } from "../screens";
 
 const Stack = createNativeStackNavigator();
@@ -60,10 +61,10 @@ const AppNavigator = () => {
 
 const AuthNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator initialRouteName="Authentication">
       <Stack.Screen
-        name="Login"
-        component={Login}
+        name="Authentication"
+        component={LoginStackNavigator}
         options={{ headerShown: false }}
       />
       <Stack.Screen

@@ -1,8 +1,7 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { TextInput } from "react-native-paper";
+import { View, Text, StyleSheet, Platform } from "react-native";
+import { TextInput, Checkbox } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Checkbox } from "react-native-paper";
 
 import { CustomIconButton, Dropdown } from "../../components/";
 // import CustomIconButton from "../../components/CustomIconButton";
@@ -96,14 +95,30 @@ const Register = ({ navigation }) => {
             onChangeText={(phoneNumber) => setPhoneNumber(phoneNumber)}
           />
         </View>
-        <View style={styles.checkbox}>
-          <Checkbox
-            status={checked ? "checked" : "unchecked"}
-            onPress={() => {
-              setChecked(!checked);
-            }}
-          />
-          <Text>Agree to the terms and conditions</Text>
+        <View style={styles.checkboxContainer}>
+          {Platform.OS === "android" ? (
+            <View>
+              <Checkbox
+                status={checked ? "checked" : "unchecked"}
+                color="#002a0c"
+                onPress={() => {
+                  setChecked(!checked);
+                }}
+              />
+              <Text>Agree to the terms and conditions</Text>
+            </View>
+          ) : (
+            <View>
+              <Checkbox.Item
+                status={checked ? "checked" : "unchecked"}
+                color="#002a0c"
+                label="Agree to the terms and conditions"
+                onPress={() => {
+                  setChecked(!checked);
+                }}
+              />
+            </View>
+          )}
         </View>
       </View>
 
@@ -131,7 +146,6 @@ const inputTheme = {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fafafa",
     flex: 1,
     width: "100%",
   },
@@ -175,9 +189,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#fafafa",
     color: "#002a0c",
   },
-  checkbox: {
+  checkboxContainer: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "center",
   },
   rowContainer: {
     flexDirection: "row",
